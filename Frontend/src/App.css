@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.landingPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: url(/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.landingPageContainer nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.landingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.landingPageMainContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height:80vh;
+  align-items: center;
+  
+}
+.landingPageMainContainer > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* font-size: 2.2rem; */
+  line-height: 1;
+  gap: 0.5rem;
+}
+
+/* 
+.landingPageMainContainer > div:nth-child(1) div[role="button"] {
+  background-color: #D97500;
+  width: fit-content;
+  padding: 1rem;
+
+} */
+
+.landingPageMainContainer > div:nth-child(1) div[role="button"] {
+  display: inline-block;
+  background-color: #FF9839;
+  padding: 14px 32px;
+  border-radius: 8px;
+  margin-top: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.landingPageMainContainer > div:nth-child(1) div[role="button"]:hover {
+  background-color: #e8850f;
+  transform: translateY(-2px);
+}
+
+.landingPageMainContainer > div:nth-child(1) div[role="button"] a {
+  color: #0a0a1a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.landingPageContainer > div:nth-child(2) img{
+  height: 40vh;
+
+}
+
+/* ===== Convo home page (matches HomeComponent JSX as-is) ===== */
+/* Import AFTER App.css:  import "../App.css"; import "./home.css"; */
+
+:root {
+  --bg: #0f1117;
+  --surface: #181b24;
+  --border: #272b38;
+  --text: #e8eaf0;
+  --muted: #9aa0b4;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #8b5cf6;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 48px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navBar h3 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* History (IconButton) - this is the one that was invisible */
+.navBar .MuiIconButton-root {
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 14px;
+  gap: 8px;
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
+}
+
+.navBar .MuiIconButton-root p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.navBar .MuiIconButton-root svg {
+  color: var(--muted);
+}
+
+/* Logout */
+.navBar .MuiButton-root {
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-weight: 600;
+  margin-left: 8px;
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navBar .MuiIconButton-root:hover,
+.navBar .MuiButton-root:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+.meetContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  overflow: hidden;
+}
+
+/* CSS-only glow on the empty right side, no image needed */
+.meetContainer::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(59, 130, 246, 0.35),
+    rgba(139, 92, 246, 0.2) 45%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.leftPanel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+}
+
+.leftPanel h3 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+/* the flex row holding input + Join */
+.leftPanel > div > div {
+  align-items: stretch;
+}
+
+/* ---------- TextField ---------- */
+.leftPanel .MuiTextField-root {
+  flex: 1;
+}
+
+.leftPanel .MuiOutlinedInput-root {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+.leftPanel .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border);
+}
+
+.leftPanel .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--muted);
+}
+
+.leftPanel .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary);
+  border-width: 2px;
+}
+
+.leftPanel .MuiInputLabel-root {
+  color: var(--muted);
+}
+
+.leftPanel .MuiInputLabel-root.Mui-focused {
+  color: var(--primary);
+}
+
+/* ---------- Join button ---------- */
+.leftPanel .MuiButton-contained {
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 0 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.leftPanel .MuiButton-contained:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.leftPanel .MuiButton-contained.Mui-disabled {
+  background: var(--border);
+  color: var(--muted);
+  box-shadow: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  .navBar {
+    padding: 12px 16px;
+  }
+
+  .meetContainer {
+    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .meetContainer::after {
+    right: -200px;
+    opacity: 0.6;
+  }
+
+  .leftPanel > div > div {
+    flex-direction: column;
+  }
+
+  .leftPanel .MuiButton-contained {
+    padding: 14px;
+  }
+}
