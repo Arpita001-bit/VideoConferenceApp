@@ -21,9 +21,9 @@ app.use("/api/v1",userRoutes);
 
 
 
-// app.get("/",(req,res)=>{
-//      res.send({"hello":"world"})
-// });
+app.get("/",(req,res)=>{
+     res.send({"hello":"world"})
+});
 app.get("/home", (req, res) => {
     return res.json({ hello: "world" });
 });
